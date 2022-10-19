@@ -6,14 +6,9 @@ Take a string and make sure that it is a proper sentence, with only the first le
 '''
 
 def properCaps(input):
-    '''
-    parameters:
-    str input - string to fix capitalization for
-    
-    return
-    str - proper capitalized string
-    '''
-    return
+    fstring = input.capitalize()
+
+    return fstring
 
 
 if __name__ == "__main__":
