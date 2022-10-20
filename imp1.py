@@ -12,3 +12,4 @@ def double(num):
     '''
     return 2*num
     
+print(double(2))

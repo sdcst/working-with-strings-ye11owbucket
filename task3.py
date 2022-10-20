@@ -10,17 +10,17 @@ this function returns the length of the string
 '''
 
 def split(input):
-    '''
-    parameters
-    str input - string to be split
-    
-    return
-    str new string with line break in the middle
-    '''
+    middle = input[len(input)//2]
+    if middle == "o":
+        mid1 = ("\n" , middle)
+        fstring = input.replace(middle, mid1)
 
-    return
+    else: 
+        fstring = 1
+    return fstring
 
 if __name__ == "__main__":
+    '''
     sentence = "There is a big balloon in the blue sky"
     assert split(sentence) == "There is a big ball-\noon in the blue sky"
 
@@ -29,3 +29,5 @@ if __name__ == "__main__":
 
     sentence = "I was a fat cat"
     assert split(sentence) == "I was a\n fat cat"
+    '''
+    print( split("There is a big balloon in the blue sky"))
