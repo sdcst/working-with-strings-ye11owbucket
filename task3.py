@@ -9,18 +9,22 @@ this function returns the length of the string
 (2 points)
 '''
 
-def split(input):
-    middle = input[len(input)//2]
-    if middle == "o":
-        mid1 = ("\n" , middle)
-        fstring = input.replace(middle, mid1)
+from abc import get_cache_token
 
-    else: 
-        fstring = 1
+
+def split(input):
+    count = len(input)
+    count = count / 2
+    if count %2 != 0:
+        count = round(count,1)
+    count =int(count) 
+    if input[count] == " " or input[count-1] == " ":
+        fstring = input[:count] + "\n" + input[count:]
+    else:
+        fstring = input[:count] + "-\n" + input[count:]
     return fstring
 
 if __name__ == "__main__":
-    '''
     sentence = "There is a big balloon in the blue sky"
     assert split(sentence) == "There is a big ball-\noon in the blue sky"
 
@@ -29,5 +33,3 @@ if __name__ == "__main__":
 
     sentence = "I was a fat cat"
     assert split(sentence) == "I was a\n fat cat"
-    '''
-    print( split("There is a big balloon in the blue sky"))
